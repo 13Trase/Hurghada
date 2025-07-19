@@ -1,0 +1,604 @@
+/* ===== RESET & BASE STYLES ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+    color: #333;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ===== UTILITY CLASSES ===== */
+.antitextdecora {
+    text-decoration: none;
+}
+
+.btn {
+    width: 100%;
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #ff6b00;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 1.3s ease;
+}
+
+.btn:hover {
+    background-color: #e05d00;
+    transform: scale(1.05);
+}
+
+/* ===== HEADER ===== */
+.header {
+    background-color: #e4e423;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.container_header {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header_logo img {
+    height: 50px;
+}
+
+.header_main_text {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+
+.header_nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.header_nav a {
+    color: white;
+    transition: color 0.3s;
+}
+
+.header_nav a:hover {
+    color: #f0f0f0;
+}
+
+.header_phone {
+    color: white;
+    font-weight: bold;
+}
+
+/* Language Dropdown */
+.language-dropdown {
+    position: relative;
+    margin-left: 20px;
+}
+
+.selected-language {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    color: white;
+    cursor: pointer;
+}
+
+.language-options {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #3bb4ff;
+    border-radius: 5px;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s;
+}
+
+.language-dropdown.active .language-options {
+    max-height: 200px;
+}
+
+.language-option {
+    padding: 8px 15px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    white-space: nowrap;
+    color: white;
+}
+
+/* Mobile Menu */
+.mobile_menu_btn {
+    display: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* ===== EXCURSION DETAILS ===== */
+.excursion-details {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.excursion-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.excursion-header h1 {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.price {
+    font-size: 28px;
+    color: #ff6b00;
+    font-weight: bold;
+}
+
+.excursion-content {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+/* Gallery Styles */
+.excursion-gallery {
+    flex: 0 0 55%;
+    position: relative;
+}
+
+.gallery-container {
+    position: relative;
+}
+
+.main-image {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    transition: opacity 0.3s;
+}
+
+.thumbnail-slider-container {
+    position: relative;
+}
+
+.thumbnail-container {
+
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+    padding: 10px 40px;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+
+.thumbnail-container::-webkit-scrollbar {
+    display: none;
+}
+
+.thumbnail {
+    
+    width: 90px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.3s;
+    flex-shrink: 0;
+}
+
+.thumbnail:hover, .active-thumbnail {
+    transform: scale(1.05);
+    border-color: #ff6b00;
+    box-shadow: 0 0 10px rgba(255, 107, 0, 0.3);
+}
+
+/* Slider Controls */
+.thumbnail-slider-btn {
+    margin-top: -40px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+
+}
+
+.thumbnail-slider-btn:hover{
+    background-color: #ff6a00;
+}
+
+.thumbnail-slider-btn.prev-btn {
+    left: 5px;
+}
+
+.thumbnail-slider-btn.next-btn {
+    right: 5px;
+}
+
+/* Excursion Info */
+.excursion-info {
+    flex: 1;
+}
+
+.excursion-description {
+    margin-bottom: 30px;
+    color: #555;
+}
+
+.excursion-highlights h3,
+.excursion-itinerary h3 {
+    margin: 15px 0;
+}
+
+.highlight-list {
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.highlight-list li {
+    margin-bottom: 10px;
+    padding-left: 25px;
+    position: relative;
+    color: #555;
+}
+
+.highlight-list li::before {
+    content: "✓";
+    color: #ff6b00;
+    position: absolute;
+    left: 0;
+}
+
+.itinerary-item {
+    margin-bottom: 20px;
+    border-left: 3px solid #ff6b00;
+    padding-left: 15px;
+}
+
+.itinerary-time {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* ===== BOOKING SECTION ===== */
+.booking-section {
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 10px;
+    margin-top: 40px;
+}
+
+.booking-section h3 {
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+}
+
+.booking-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.booking-form input,
+.booking-form select {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.book_btn {
+    width: 60%;
+    padding: 12px;
+    background-color: #ff6b00;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 20px auto 0;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+.book_btn:hover {
+    background-color: #e05d00 ease;
+}
+
+.JDate{
+    margin-left: 2px;
+    color: #555;
+}
+
+/* ===== MODAL STYLES ===== */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal_content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 90%;
+    position: relative;
+}
+
+.modal_close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #777;
+}
+
+#bookingForm input {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Дополнение к существующему CSS */
+.excursion-info {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Для кнопки в карточке экскурсии */
+.excursion-info .book_btn {
+    align-self: center;
+    width: 40%;
+    margin-top: 20px;
+}
+
+/* ===== CONTACTS ===== */
+.contacts_content {
+    display: flex;
+    gap: 40px;
+}
+
+.contacts_info h3,
+.contacts_form h3 {
+    margin-bottom: 20px;
+}
+
+.social_links {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social_links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: #ff6b00;
+    color: white;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 40px 0;
+}
+
+.footer_logo{
+    max-width: 120px;
+}
+
+.footer_content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 0 20px;
+}
+
+.footer_links a {
+    color: #ccc;
+    transition: color 0.3s;
+}
+
+.footer_links a:hover {
+    color: white;
+}
+
+.footer_bottom {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #555;
+    color: #ccc;
+}
+
+/* ===== MODAL ===== */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal_content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 90%;
+    position: relative;
+}
+
+/* ===== MEDIA QUERIES ===== */
+@media (max-width: 768px) {
+    /* Header */
+    .header_nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #717171;
+        padding: 20px;
+    }
+    
+    .header_nav.active {
+        display: block;
+    }
+    
+    .header_nav ul {
+        flex-direction: column;
+    }
+    
+    .mobile_menu_btn {
+        display: block;
+    }
+    
+    .header_main_text {
+        display: none;
+    }
+    
+    /* Excursion Content */
+    .excursion-content {
+        flex-direction: column;
+    }
+    
+    .excursion-gallery {
+        flex: 1;
+        max-width: 100%;
+    }
+    
+    .thumbnail-container {
+        padding: 10px 15px;
+    }
+    
+    .thumbnail-slider-btn {
+        display: none;
+    }
+    
+    /* Contacts */
+    .contacts_content {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .container_header {
+        flex-wrap: wrap;
+    }
+    
+    .header_phone {
+        order: 1;
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
+    }
+    
+    .main-image {
+        height: 300px;
+    }
+    
+    .thumbnail {
+        width: 70px;
+        height: 50px;
+    }
+}
+
+
+.btnWA {
+    margin-top: 10px;
+    width: 100%;
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #25D366;
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btnWA:hover {
+    background-color: #128C7E;
+}
+
+/* Для мобильных устройств */
+@media (max-width: 768px) {
+    .btnWA {
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+}

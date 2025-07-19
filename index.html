@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Отдых в Хургаде - Экскурсии и туры</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container_header">
+            <div class="header_logo">
+                <a href="index.html"><img src="img/padi-logo.png" alt="Логотип Хургада"></a>
+            </div>
+            <a href="index.html" class="header_main_text"><div class="header_main_text">Отдых Хургада</div></a>
+            <nav class="header_nav">
+                <ul>
+                    <li><a href="index.html#excursions">Экскурсии</a></li>
+                    <li><a href="index.html#about">О нас</a></li>
+                    <li><a href="index.html#reviews">Отзывы</a></li>
+                    <li><a href="index.html#contacts">Контакты</a></li>
+                </ul>
+            </nav>
+            <div class="language-dropdown">
+                <div class="selected-language">
+                    <img src="https://flagcdn.com/w20/gb.png" alt="English">
+                    <span>ENG</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="language-options">
+                    <div class="language-option" data-lang="en">
+                        <img src="https://flagcdn.com/w20/gb.png" alt="English"> ENG
+                    </div>
+                    <div class="language-option" data-lang="ru">
+                        <img src="https://flagcdn.com/w20/ru.png" alt="Русский"> RUS
+                    </div>
+                    <div class="language-option" data-lang="de">
+                        <img src="https://flagcdn.com/w20/de.png" alt="Deutsch"> DE
+                    </div>
+                    <div class="language-option" data-lang="ar">
+                        <img src="https://flagcdn.com/w20/eg.png" alt="العربية"> AR
+                    </div>
+                </div>
+            </div>
+            <div class="mobile_menu_btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero_overlay"></div>
+        <div class="container">
+            <!-- <img class="main_pic"src="img/Main.jpg" alt="main"> -->
+            <h1>Лучшие экскурсии в Хургаде</h1>
+            <p>Откройте для себя красоты Египта с нашими увлекательными турами</p>
+            <a href="#excursions" class="btnChoose">Выбрать экскурсию</a>
+        </div>
+    </section>
+
+ <section id="excursions" class="excursions">
+        <div class="container">
+            <h2>Экскурсии</h2>
+            
+            <!-- Добавляем кнопки фильтров -->
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all">Все экскурсии</button>
+                <button class="filter-btn historical" data-filter="historical">Исторические</button>
+                <button class="filter-btn safari" data-filter="safari">Сафари</button>
+                <button class="filter-btn sea" data-filter="sea">Морские</button>
+            </div>
+
+            <div class="excursions_grid">
+
+                <div class="excursion_card" data-category="sea">
+                    <a href="OrangeBay.html" class="antitextdecora">
+                    <img src="img/OrangeBayMain.jpg" alt="Оранжевые острова">
+                    <div class="excursion_card_content">
+                        <h3>Оранжевые острова</h3>
+                        <p>Поездка к знаменитому и красивому месту с возможностью снорклинга.</p>
+                        <div class="price">$30</div>
+                    </a>
+                        <button class="btn book_btn">Забронировать</button>
+                        <a href="OrangeBay.html" class="more_btn">Узнать больше</a>
+                </div>
+            </div>
+
+            
+                <a href="kair.html" class="antitextdecora">
+                <div class="excursion_card" data-category="historical">
+                    <img src="img/KairMain.jpg" alt="Каир">
+                    <div class="excursion_card_content">
+                        <h3>Каир и пирамиды</h3>
+                        <p>Экскурсия в столицу Египта с посещением пирамид Гизы и Египетского музея.</p>
+                        <div class="price">$50</div>
+                    </a>   
+                        <button class="btn book_btn">Забронировать</button>
+                        <a href="kair.html" class="more_btn">Узнать больше</a>
+            </div>
+            
+                <div class="excursion_card" data-category="historical">
+                    <a href="luxor.html" class="antitextdecora">
+                    <img src="img/luxorMain.jpg" alt="Луксор">
+                    <div class="excursion_card_content">
+                        <h3>Луксор</h3>
+                        <p>Путешествие в древние Фивы с осмотром Карнакского храма и Долины царей.</p>
+                        <div class="price">$50</div>
+                    </a>
+                        <button class="btn book_btn">Забронировать</button>
+                        <a href="luxor.html" class="more_btn">Узнать больше</a>
+                    </div>
+                </div>
+                
+
+                <div class="excursion_card" data-category="sea">
+                    <a href="Parasailing.html" class="antitextdecora">
+                    <img src="img/parasailing11.jpg" alt="parasailing">
+                    <div class="excursion_card_content">
+                        <h3>Парашутинг</h3>
+                        <p>Незабываемый полет над Красным морем с парашютом, привязанным к катеру.</p>
+                        <div class="price">$15</div>
+                    </a>
+                        <button class="btn book_btn">Забронировать</button>
+                        <a href="#" class="more_btn">Узнать больше</a>
+                    </div>
+                </div>
+            </div>
+
+                <div class="excursion_card" data-category="safari">
+                    <a href="Quadro.html" class="antitextdecora">
+                    <img src="img/quadro (1).jpg" alt="Quadrosafary">
+                    <div class="excursion_card_content">
+                        <h3>Поездка по пустыне на квадроциклах</h3>
+                        <p>Адреналиновое приключение по пустыне.</p>
+                        <div class="price">$15</div>
+                    </a>
+                        <button class="btn book_btn">Забронировать</button>
+                        <a href="#" class="more_btn">Узнать больше</a>
+                    </div>
+                </div>
+            </div>
+
+                <div class="excursion_card" data-category="sea">
+                    <a href="batiscaf.html" class="antitextdecora">
+                    <img src="img/BATISCAF (2).jpeg" alt="parasailing">
+                    <div class="excursion_card_content">
+                        <h3>Батискаф</h3>
+                        <p>Погружение на батискафе к коралловым рифам без необходимости плавать.</p>
+                        <div class="price">$15</div>
+                    </a>
+                        <button class="btn book_btn">Забронировать</button>
+                        <a href="#" class="more_btn">Узнать больше</a>
+                    </div>
+                </div>
+            </div>
+
+
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2>О нашей компании</h2>
+            <div class="about_content">
+                <div class="about_text">
+                    <p>Мы работаем в сфере туризма в Хургаде более 10 лет, предлагая нашим клиентам только лучшие экскурсии по доступным ценам.</p>
+                    <p>Наши гиды - профессионалы с многолетним опытом, говорящие на русском языке. Мы гарантируем безопасность и комфорт во время всех наших туров.</p>
+                    <ul class="advantages">
+                        <li><i class="fas fa-check"></i> Лицензированные гиды</li>
+                        <li><i class="fas fa-check"></i> Комфортабельный транспорт</li>
+                        <li><i class="fas fa-check"></i> Без скрытых платежей</li>
+                        <li><i class="fas fa-check"></i> Группы до 15 человек</li>
+                    </ul>
+                </div>
+                <div class="about_image">
+                    <img src="img/padi-logo.png" alt="Наша команда">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="reviews" class="reviews">
+        <div class="container">
+            <h2>Отзывы наших клиентов</h2>
+            <div class="reviews_slider">
+                <div class="review_card active">
+                    <div class="review_text">"Отличная экскурсия в Луксор! Гид очень знающий, все было организовано на высшем уровне. Обязательно порекомендую вас друзьям."</div>
+                    <div class="review_author">- Анна, Москва</div>
+                </div>
+                <div class="review_card">
+                    <div class="review_text">"Морская прогулка превзошла все ожидания! Красивые кораллы, много рыбок, вкусный обед. Спасибо за прекрасный день!"</div>
+                    <div class="review_author">- Иван, Санкт-Петербург</div>
+                </div>
+                <div class="review_card">
+                    <div class="review_text">"Пирамиды - это что-то невероятное! Особенно понравилось, что группа была небольшая и гид уделил внимание каждому."</div>
+                    <div class="review_author">- Елена, Киев</div>
+                </div>
+                <div class="slider_controls">
+                    <button class="slider_prev"><i class="fas fa-chevron-left"></i></button>
+                    <button class="slider_next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacts" class="contacts">
+        <div class="container">
+            <h2>Контакты</h2>
+            <div class="contacts_content">
+                <div class="contacts_info">
+                    <h3>Свяжитесь с нами</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Хургада, ул. Шератон, 123</p>
+                    <p><i class="fas fa-phone"></i> +20 123 456 7890</p>
+                    <p><i class="fas fa-envelope"></i> info@hurghada-tours.com</p>
+                    <div class="social_links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-telegram-plane"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer_content">
+                <div class="footer_logo">
+                    <img src="img/padi-logo.png" alt="Логотип Хургада">
+                    <span>Отдых Хургада</span>
+                </div>
+                <div class="footer_links">
+                    <h4>Меню</h4>
+                    <ul>
+                        <li><a href="#excursions">Экскурсии</a></li>
+                        <li><a href="#about">О нас</a></li>
+                        <li><a href="#reviews">Отзывы</a></li>
+                        <li><a href="#contacts">Контакты</a></li>
+                    </ul>
+                </div>
+                <div class="footer_contacts">
+                    <h4>Контакты</h4>
+                    <p><i class="fas fa-phone"></i> +20 123 456 7890</p>
+                    <p><i class="fas fa-envelope"></i> info@hurghada-tours.com</p>
+                </div>
+            </div>
+            <div class="footer_bottom">
+                <p>&copy; 2025 Отдых Хургада. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal" id="bookingModal">
+        <div class="modal_content">
+            <span class="modal_close">&times;</span>
+            <h2>Забронировать экскурсию</h2>
+                <form id="bookingForm" action="https://docs.google.com/forms/d/e/ФОРМА_ID/formResponse" method="POST" target="_blank">
+                    <input type="text" name="entry.526800128" placeholder="Ваше имя" required> <!-- Имя -->
+                    <input type="tel" name="entry.521779763" placeholder="Ваш телефон WhatsApp"> <!-- Телефон -->
+                    <h5 class="JDate">Желаемая дата экскурсии</h5>
+                    <input type="date" name="entry.487369593" placeholder="Дата экскурсии" required> <!-- Дата -->
+                    <input type="number" name="entry.1479108569" placeholder="Количество человек" min="1" required> <!-- Люди -->
+                    <input type="hidden" name="entry.1454424678" id="excursionNameInput"> <!-- Экскурсия (скрытое поле) -->
+                    <button type="submit" class="btn">Подтвердить бронирование</button>
+                    <button type="button" class="btnWA">Написать в WhatsApp</button>
+                </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
