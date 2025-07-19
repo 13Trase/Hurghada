@@ -482,59 +482,67 @@ document.addEventListener('DOMContentLoaded', function() {
     const languageOptions = document.querySelectorAll('.language-option');
 
     // Function to update excursion cards
-    function updateExcursionCards(langData) {
-        const excursions = {
-            orangeBay: document.querySelector('.excursion_card[data-category="sea"]:nth-child(1)'),
-            cairo: document.querySelector('.excursion_card[data-category="historical"]:nth-child(1)'),
-            luxor: document.querySelector('.excursion_card[data-category="historical"]:nth-child(2)'),
-            parasailing: document.querySelector('.excursion_card[data-category="sea"]:nth-child(2)'),
-            quadSafari: document.querySelector('.excursion_card[data-category="safari"]'),
-            bathyscaphe: document.querySelector('.excursion_card[data-category="sea"]:nth-child(3)')
-        };
-
-        if (excursions.orangeBay) {
-            const h3 = excursions.orangeBay.querySelector('h3');
-            const p = excursions.orangeBay.querySelector('p');
-            if (h3) h3.textContent = langData.orangeBay.title;
-            if (p) p.textContent = langData.orangeBay.description;
+function updateExcursionCards(langData) {
+    // Находим все карточки экскурсий
+    const cards = document.querySelectorAll('.excursion_card');
+    
+    cards.forEach(card => {
+        // Находим заголовок и описание внутри карточки
+        const titleElement = card.querySelector('h3');
+        const descElement = card.querySelector('p');
+        
+        if (!titleElement || !descElement) return;
+        
+        // Определяем, какая это экскурсия по заголовку (на текущем языке)
+        const currentTitle = titleElement.textContent.trim();
+        
+        // Сопоставляем с нашими данными
+        let excursionData;
+        
+        if (currentTitle.includes(languageData.ru.orangeBay.title) || 
+            currentTitle.includes(languageData.en.orangeBay.title) ||
+            currentTitle.includes(languageData.de.orangeBay.title) ||
+            currentTitle.includes(languageData.ar.orangeBay.title)) {
+            excursionData = langData.orangeBay;
+        } 
+        else if (currentTitle.includes(languageData.ru.cairo.title) || 
+                 currentTitle.includes(languageData.en.cairo.title) ||
+                 currentTitle.includes(languageData.de.cairo.title) ||
+                 currentTitle.includes(languageData.ar.cairo.title)) {
+            excursionData = langData.cairo;
         }
-
-        if (excursions.cairo) {
-            const h3 = excursions.cairo.querySelector('h3');
-            const p = excursions.cairo.querySelector('p');
-            if (h3) h3.textContent = langData.cairo.title;
-            if (p) p.textContent = langData.cairo.description;
+        else if (currentTitle.includes(languageData.ru.luxor.title) || 
+                 currentTitle.includes(languageData.en.luxor.title) ||
+                 currentTitle.includes(languageData.de.luxor.title) ||
+                 currentTitle.includes(languageData.ar.luxor.title)) {
+            excursionData = langData.luxor;
         }
-
-        if (excursions.luxor) {
-            const h3 = excursions.luxor.querySelector('h3');
-            const p = excursions.luxor.querySelector('p');
-            if (h3) h3.textContent = langData.luxor.title;
-            if (p) p.textContent = langData.luxor.description;
+        else if (currentTitle.includes(languageData.ru.parasailing.title) || 
+                 currentTitle.includes(languageData.en.parasailing.title) ||
+                 currentTitle.includes(languageData.de.parasailing.title) ||
+                 currentTitle.includes(languageData.ar.parasailing.title)) {
+            excursionData = langData.parasailing;
         }
-
-        if (excursions.parasailing) {
-            const h3 = excursions.parasailing.querySelector('h3');
-            const p = excursions.parasailing.querySelector('p');
-            if (h3) h3.textContent = langData.parasailing.title;
-            if (p) p.textContent = langData.parasailing.description;
+        else if (currentTitle.includes(languageData.ru.quadSafari.title) || 
+                 currentTitle.includes(languageData.en.quadSafari.title) ||
+                 currentTitle.includes(languageData.de.quadSafari.title) ||
+                 currentTitle.includes(languageData.ar.quadSafari.title)) {
+            excursionData = langData.quadSafari;
         }
-
-        if (excursions.quadSafari) {
-            const h3 = excursions.quadSafari.querySelector('h3');
-            const p = excursions.quadSafari.querySelector('p');
-            if (h3) h3.textContent = langData.quadSafari.title;
-            if (p) p.textContent = langData.quadSafari.description;
+        else if (currentTitle.includes(languageData.ru.bathyscaphe.title) || 
+                 currentTitle.includes(languageData.en.bathyscaphe.title) ||
+                 currentTitle.includes(languageData.de.bathyscaphe.title) ||
+                 currentTitle.includes(languageData.ar.bathyscaphe.title)) {
+            excursionData = langData.bathyscaphe;
         }
-
-        if (excursions.bathyscaphe) {
-            const h3 = excursions.bathyscaphe.querySelector('h3');
-            const p = excursions.bathyscaphe.querySelector('p');
-            if (h3) h3.textContent = langData.bathyscaphe.title;
-            if (p) p.textContent = langData.bathyscaphe.description;
+        
+        // Обновляем текст
+        if (excursionData) {
+            titleElement.textContent = excursionData.title;
+            descElement.textContent = excursionData.description;
         }
-    }
-
+    });
+}
     // Function to set language
     function setLanguage(lang) {
         const langData = languageData[lang];
